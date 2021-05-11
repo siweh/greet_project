@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/simple-grid-min.css" />
+    <link rel="stylesheet" href="./styles/greet.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 style="text-align: center">
+                <strong style="color: purple">Greeting</strong>
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1">
+              <strong style="font-size: large">Name: </strong>
+            </div>
+            <div class="col-11">
+              <input
+                type="text"
+                class="text-input"
+                placeholder="Please enter a name"
+              />
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-12">
+              <form action="" class="form-input">
+                <input
+                  type="radio"
+                  id="english"
+                  name="language"
+                  value="english"
+                />
+                <label for="english">English</label>
+                <input
+                  type="radio"
+                  id="isixhosa"
+                  name="language"
+                  value="isixhosa"
+                />
+                <label for="isixhosa">IsiXhosa</label>
+                <input
+                  type="radio"
+                  id="isizulu"
+                  name="language"
+                  value="isizulu"
+                />
+                <label for="isizulu">Isizulu</label>
+              </form>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-12">
+              <button type="button" class="block">Greet me</button>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div style="text-align: center" class="col-12">
+              <span class="message">Hello, Siweh!</span>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-11">
+              <strong style="font-size: large"
+                >Number of greeted people:
+              </strong>
+            </div>
+            <div class="col-1">
+              <div class="center">
+                <div class="circle">
+                  <span class="circle__content">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="greet.js"></script>
+  <script src="greet-dom.js"></script>
+</html>

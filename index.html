@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/simple-grid-min.css" />
     <link rel="stylesheet" href="./styles/greet.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>Document</title>
   </head>
   <body>
@@ -21,10 +20,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-1">
-              <strong style="font-size: large">Name: </strong>
-            </div>
-            <div class="col-11">
+            <div class="col-12">
               <input
                 type="text"
                 class="text-input"
@@ -37,6 +33,7 @@
             <div class="col-12">
               <form action="" class="form-input">
                 <input
+                  checked
                   type="radio"
                   id="english"
                   name="language"
@@ -69,29 +66,31 @@
           <br />
           <div class="row">
             <div style="text-align: center" class="col-12">
-              <span class="message">Hello, Siweh!</span>
+              <span class="message"></span>
             </div>
           </div>
           <br />
           <div class="row">
-            <div class="col-11">
+            <div class="col-12">
               <strong style="font-size: large"
                 >Number of greeted people:
               </strong>
-            </div>
-            <div class="col-1">
-              <div class="center">
-                <div class="circle">
-                  <span class="circle__content">0</span>
-                </div>
+              <div class="circle">
+                <span class="circle__content">0</span>
               </div>
             </div>
           </div>
-          <br />
+          <div class="row">
+            <div class="col-12">
+              <p class="demo"></p>
+            </div>
+          </div>
         </div>
+        <br />
       </div>
     </div>
   </body>
+  <script src="local-storage.js"></script>
   <script src="greet.js"></script>
   <script src="greet-dom.js"></script>
 </html>

@@ -1,5 +1,5 @@
 function storeGreetedPeopleList(greetedPeopleList, isLocalStorageTest = false) {
-    console.log(greetedPeopleList);
+    //console.log(greetedPeopleList);
     var listGreetedPeople = JSON.stringify(greetedPeopleList);
 
     //For tests
@@ -17,7 +17,7 @@ function getStoredGreetedPeople(isLocalStorageTest = false) {
     if (isLocalStorageTest) {
        return JSON.parse(localStorage.getItem('testStorage'));
     }
-    
+
     var storedGreetedPeople = localStorage.getItem('listGreetedPeople');
     
     return JSON.parse(storedGreetedPeople);

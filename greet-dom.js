@@ -1,6 +1,7 @@
 var textEnteredElement = document.querySelector(".text-input");
 var radioBtnElement = document.querySelector(".form-input");
 var messageElements = document.querySelector(".message");
+var errorMsgElement = document.querySelector(".error");
 var greetBtn = document.querySelector(".block");
 var counter = document.querySelector(".circle__content");
 var storing = document.querySelector(".demo");
@@ -14,8 +15,9 @@ function greet(){
 
     var checkedRadioButton = document.querySelector("input[name='language']:checked");
     //console.log(checkedRadioButton.value);
+
     //get the chosen language
-    var getLanguage = checkedRadioButton.value;
+    var getLanguage = checkedRadioButton?.value;
     //get the name entered in the text area
     var getTextEntered = textEnteredElement.value;
     //console.log(textEnteredElement.value);
@@ -23,6 +25,9 @@ function greet(){
     //Recieving the greeting message
     messageElements.innerHTML = greetings.getMessage();
    
+    //Recieving the error message
+    errorMsgElement.innerHTML = greetings.getErrorMsg();
+
     //Clear the value in the textBox after the greetme button is clicked
     textEnteredElement.value = "";
 

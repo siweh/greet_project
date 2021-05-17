@@ -1,33 +1,46 @@
 function GreetMe(greetedPeopleList = []){
     var greetedPeople = greetedPeopleList !==  null ? greetedPeopleList : [];
     var greetingMessage = '';
+    var errorMessage = '';
 
     function greeting(name, language){
-        language.toLowerCase();
-        var regName = /^[a-zA-Z]/;
+        language?.toLowerCase();
+        var regName = /^[a-zA-Z]{3,15}$/;
         
         if (name === ''){
-            greetingMessage = 'Please enter a name';
+            greetingMessage = '';
+            errorMessage = 'Please enter a name';
         }else{
 
             if(regName.test(name)){
-               
-                if (!greetedPeople.includes(name.toLowerCase())){
-                    greetedPeople.push(name.toLowerCase());
-                }
-                if (language === 'isixhosa'){
-                    greetingMessage = 'Molo, ' + name;
-                }else if (language === 'isizulu'){
-                    greetingMessage = 'Saw`bona, ' + name;
+                //console.log(language);
+                if(language !== undefined){
+                    errorMessage= '';
+                    if (!greetedPeople.includes(name.toLowerCase())){
+                        greetedPeople.push(name.toLowerCase());
+                    }
+                    if (language === 'isixhosa'){
+                        greetingMessage = 'Molo, ' + name;
+                    }else if (language === 'isizulu'){
+                        greetingMessage = 'Saw`bona, ' + name;
+                    }else if (language === 'english'){
+                        greetingMessage = 'Hello, ' + name;
+                    }
                 }else{
-                    greetingMessage = 'Hello, ' + name;
+                    greetingMessage = '';
+                    errorMessage = 'Please choose a language to be greeted in';
                 }
             }else{
-                greetingMessage = 'Your name should not contain numbers';
+                greetingMessage = '';
+                errorMessage = 'Your name should not contain numbers';
             }
         }
     }
 
+
+    function getErrorMsg() {
+        return errorMessage;
+    }
     function getMessage() {
         return greetingMessage;
     }
@@ -40,13 +53,11 @@ function GreetMe(greetedPeopleList = []){
         return greetedPeople;
     }
 
-    function validate(greetedPeopleList){
-
-    }
     return {
         greeting,
         getMessage,
         greetedPeopleCounter,
-        getGreetedPeople
+        getGreetedPeople,
+        getErrorMsg
     }
 } 

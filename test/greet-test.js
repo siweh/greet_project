@@ -19,11 +19,27 @@ describe("Greet Project", function(){
         });
     });
 
-    context("Without a name", function(){
+    context("Given an invalid name", function(){
+        const greetings = GreetMe();
+        it("should return an error message saying name should not contain numbers", function(){
+            greetings.greeting('Carry234s', 'isizulu');
+            assert.equal('Your name should not contain numbers', greetings.getErrorMsg());
+        })
+    })
+
+    context("Not given a name", function(){
         const greetings = GreetMe();
         it("should return a message which forces the user to enter a name", function(){
             greetings.greeting('', 'isizulu');
-            assert.equal('Please enter a name', greetings.getMessage());
+            assert.equal('Please enter a name', greetings.getErrorMsg());
+        });
+    });
+
+    context("Not chosen a language to be greeted on", function(){
+        const greetings = GreetMe();
+        it("should return a message which enforces the user to choose a language", function(){
+            greetings.greeting('Kelly', );
+            assert.equal('Please choose a language to be greeted in', greetings.getErrorMsg());
         });
     });
 

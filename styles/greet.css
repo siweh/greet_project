@@ -73,6 +73,7 @@ body{
     vertical-align: middle;
     text-align: center;
   }
-  /* .center{
-      align-items: center;
-  } */
+  
+  .error {
+    color: red;
+  }

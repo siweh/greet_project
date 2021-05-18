@@ -56,6 +56,7 @@ function GreetMe(greetedPeopleList = []){
     function resetCounter() {
         var reset = greetedPeopleCounter();
         reset = 0;
+        location.reload();
         return reset;
     }
 

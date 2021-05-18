@@ -4,6 +4,7 @@ var messageElements = document.querySelector(".message");
 var errorMsgElement = document.querySelector(".error");
 var greetBtn = document.querySelector(".block");
 var counter = document.querySelector(".circle__content");
+var resetCounter = document.querySelector(".reset-btn");
 var storing = document.querySelector(".demo");
 
 //Storing greeted people
@@ -31,12 +32,18 @@ function greet(){
     //Clear the value in the textBox after the greetme button is clicked
     textEnteredElement.value = "";
 
-    //Storing the list of greeted people
+    //Storing the list of greeted people length
     storeGreetedPeopleList(greetings.getGreetedPeople());
 
     //Counting the number of greeted people and display it on the counter in webpage
     counter.innerHTML = greetings.greetedPeopleCounter();
 }
 
+function resetCounterBtn() {
+    counter.innerHTML = greetings.resetCounter();
+    clearStorage();
+}
+
 
 greetBtn.addEventListener('click', greet);
+resetCounter.addEventListener('click', resetCounterBtn);

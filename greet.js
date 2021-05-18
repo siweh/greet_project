@@ -53,11 +53,18 @@ function GreetMe(greetedPeopleList = []){
         return greetedPeople;
     }
 
+    function resetCounter() {
+        var reset = greetedPeopleCounter();
+        reset = 0;
+        return reset;
+    }
+
     return {
         greeting,
         getMessage,
         greetedPeopleCounter,
         getGreetedPeople,
-        getErrorMsg
+        getErrorMsg,
+        resetCounter
     }
 } 

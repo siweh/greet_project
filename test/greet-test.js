@@ -23,7 +23,7 @@ describe("Greet Project", function(){
         const greetings = GreetMe();
         it("should return an error message saying name should not contain numbers", function(){
             greetings.greeting('Carry234s', 'isizulu');
-            assert.equal('Your name should not contain numbers', greetings.getErrorMsg());
+            assert.equal('Name should not contain numbers or special characters', greetings.getErrorMsg());
         })
     })
 

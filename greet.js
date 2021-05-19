@@ -4,6 +4,12 @@ function GreetMe(greetedPeopleList = []){
     var errorMessage = '';
 
     function greeting(name, language){
+        function capitalizingFirstLetter() {
+            return name[0].toUpperCase() + name.slice(1).toLowerCase();
+            //return name.toLowerCase().replace(/^./, str => str.toUpperCase());
+        }
+        //console.log(language);
+        //console.log(name);
         language?.toLowerCase();
         var regName = /^[a-zA-Z]{3,15}$/;
         
@@ -11,20 +17,19 @@ function GreetMe(greetedPeopleList = []){
             greetingMessage = '';
             errorMessage = 'Please enter a name';
         }else{
-
             if(regName.test(name)){
-                //console.log(language);
                 if(language !== undefined){
                     errorMessage= '';
                     if (!greetedPeople.includes(name.toLowerCase())){
                         greetedPeople.push(name.toLowerCase());
                     }
+                    
                     if (language === 'isixhosa'){
-                        greetingMessage = 'Molo, ' + name;
+                        greetingMessage = 'Molo, ' + capitalizingFirstLetter();
                     }else if (language === 'isizulu'){
-                        greetingMessage = 'Saw`bona, ' + name;
+                        greetingMessage = 'Saw`bona, ' + capitalizingFirstLetter();
                     }else if (language === 'english'){
-                        greetingMessage = 'Hello, ' + name;
+                        greetingMessage = 'Hello, ' + capitalizingFirstLetter();
                     }
                 }else{
                     greetingMessage = '';
@@ -32,11 +37,10 @@ function GreetMe(greetedPeopleList = []){
                 }
             }else{
                 greetingMessage = '';
-                errorMessage = 'Your name should not contain numbers';
+                errorMessage = 'Name should not contain numbers or special characters';
             }
         }
     }
-
 
     function getErrorMsg() {
         return errorMessage;
